@@ -1,73 +1,103 @@
 # neural-network-challenge-2
 
-neural network project
+### I. Background
+
+Utlize the employee data to best predict:
+
+* whether employees are likely to leave the company (Attrition) and
+* the department that is the best fits each employee (Department)
+
+Employ a Multi-Target / Branched Neural Network.
+
+Datasource:  '[https://static.bc-edx.com/ai/ail-v-1-0/m19/lms/datasets/attrition.csv](https://static.bc-edx.com/ai/ail-v-1-0/m19/lms/datasets/attrition.csv)'
+
+Workbook: **attrition.ipynb**
+
+#### II. Preprocessing
+
+1. Import the data, inspect, determine number of unique values in each column.
+2. Split data: create `y_df` with the Attrition and Department columns.
+3. Investigate Data Redundancy and Importance in the X data.
+
+   ![1727309404655](image/README/1727309404655.png)![1727309445080](image/README/1727309445080.png)
+4. Process the X data that is string data, encode with **Ordinal Encoding**
+
+   ![1727309528189](image/README/1727309528189.png)
+5. Check the data for Feature Importance using **RandomForestClassifier:**
+   ![1727309589333](image/README/1727309589333.png)
+6. Visualization of the features using **Seaborn:**
+
+![1727309662993](image/README/1727309662993.png)
+
+7. Display Feature Correlation Matrix:
+
+![1727309820361](image/README/1727309820361.png)
 
 
+10. X_df created by reducting the list of X_data feature columns for any **Feature Importance** value under 1.7%.   No columns removed based on columns being **highly correlated.**
+11. y data split into y data for Department predictions and Attrition predictions
+12. Data split using train_test_split;
+13. `X` data in string format encoded using **Pandas one-hot-encoder** and X_data scaled with **StandardScaler.**
 
-### Background
+#### III. Create, Compile, and Train the Model
 
-You are tasked with creating a neural network that HR can use to predict whether employees are likely to leave the company. Additionally, HR believes that some employees may be better suited to other departments, so you are also asked to predict the department that best fits each employee. These two columns should be predicted using a branched neural network.
+1. Layers screated for Multi-Target / Branched model.
+2. Shared/common layers created:  input and two shared, hidden layers (Dense layers with Relu activation)
+3. Branched to create a distinct hidden and output later for Department and Attrition.
+4. Created, compiled the model.  Optimizer='adam', loss for Department set to categorical_crossentropy, loss for Attrition set to binary_crossentropy.  Accuracy selected for metrics.
 
+   ![1727310253297](image/README/1727310253297.png)
+5. Fit/Train the model, using 50 epochs and batch size of 32.
+6. Evaluate the model with the testing data:  ()final training epoch):
 
-
-#### Part 1: Preprocessing
-
-1. Import the data and view the first five rows.
-2. Determine the number of unique values in each column.
-3. Create `y_df` with the attrition and department columns.
-4. Create a list of at least 10 column names to use as `X` data. You can choose any 10 columns you’d like EXCEPT the attrition and department columns.
-5. Create `X_df` using your selected columns.
-6. Show the data types for `X_df`.
-7. Split the data into training and testing sets.
-8. Convert your `X` data to numeric data types however you see fit. Add new code cells as necessary. Make sure to fit any encoders to the training data, and then transform both the training and testing data.
-9. Create a StandardScaler, fit the scaler to the training data, and then transform both the training and testing data.
-10. Create a OneHotEncoder for the department column, then fit the encoder to the training data and use it to transform both the training and testing data.
-11. Create a OneHotEncoder for the attrition column, then fit the encoder to the training data and use it to transform both the training and testing data.
-
-#### Part 2: Create, Compile, and Train the Model
-
-1. Find the number of columns in the `X` training data.
-2. Create the input layer. Do NOT use a sequential model, as there will be two branched output layers.
-3. Create at least two shared layers.
-4. Create a branch to predict the department target column. Use one hidden layer and one output layer.
-5. Create a branch to predict the attrition target column. Use one hidden layer and one output layer.
-6. Create the model.
-7. Compile the model.
-8. Summarize the model.
-9. Train the model using the preprocessed data.
-10. Evaluate the model with the testing data.
-11. Print the accuracy for both department and attrition.
-
-#### Part 3: Summary
-
-Briefly answer the following questions in the space provided:
-
-1. Is accuracy the best metric to use on this data? Why or why not?
-2. What activation functions did you choose for your output layers, and why?
-3. Can you name a few ways that this model could be improved?
+```
+Epoch 50/50
+35/35 ━━━━━━━━━━━━━━━━━━━━ 0s 4ms/step -
+attr_output_accuracy: 0.9950 -
+dept_output_accuracy: 1.0000 -
+loss: 0.0273 -
+val_attr_output_accuracy: 0.8397
+val_dept_output_accuracy: 0.7120 - val_loss: 30.4962
+```
 
 
+#### IV. Summary
 
-#### Preprocessing (40 points)
+**Model Accuracy:**
 
-* [ ] Import the data. (5 points)
-* [ ] Create `y_df` with the attrition and department columns. (5 points)
-* [ ] Choose 10 columns for `X`. (5 points)
-* [ ] Show the data types of the `X` columns. (5 points)
-* [ ] Split the data into training and testing sets. (5 points)
-* [ ] Encode all `X` data to numeric types. (5 points)
-* [ ] Scale the `X` data. (5 points)
-* [ ] Encode all `y` data to numeric types. (5 points)
+```
+Total Loss (overall error in the model's predictions): 1.361
+Attrition Accuracy (how often the model correctly predicts Attrition): 81.5%
+Department Accuracy (how often the model correctly predictsDepartment): 97.0%
+```
 
-#### Model (40 points)
 
-* [ ] Find the number of columns in the `X` training data. (5 points)
-* [ ] Create an input layer. (5 points)
-* [ ] Create at least two shared hidden layers. (10 points)
-* [ ] Create an output branch for the department column. (10 points)
-* [ ] Create an output branch for the attrition column. (10 points)
+#### V. Followup, Questions
 
-#### Summary (20 points)
+**Is accuracy the best metric to use on this data?**
 
-* [ ] Answer the questions briefly. (10 points)
-* [ ] Show understanding of the concepts in your answers. (10 points)
+* Accuracy should be useful for mulit-class classification ('Department').  However, if the data is imbalanced, Accuracy can be misleading.
+* In the case of imbalanced data, it's best to use **precision, recall, F1-score**.  These can give more insights into False Positives and False Negatives,  which will be important to understand in alot of business applications.
+* AUC-ROC could also be used.
+
+**Activation functions used for these Neural layers:**
+
+For **Hidden Layers**:
+
+* ReLU (Rectified Linear Unit) is used often with because it performs well
+* Helps mitigate the vanishing gradient problem
+* Could try Leaky ReLU or ELU (Exponential Linear Unit).
+
+For **Output layers:**
+
+* With Multi-Class classification ('Department'), **softmax** outputs a probability distribution over classes
+* For Binary classification ('Attrition'), **sigmoid** is best.
+
+**Improving this model:**
+
+* **Hyperparameter Tuning**: try different batch size, epoch number, architecture of the neural network (# layers, #
+  neurons/layer).
+* **Additional Data Enginnering**: dimensionality reduction (PCA), additional investigation of Feature Columns for redundancy.
+* **Cross-Validation**: verify model performance is consistent across different slices of the data.
+* **Cross-check with predictions from other Model Types** to improve diversity of methods to try to improve overall accuracy.
+* **Regularization:** Dropout, L2 regularization, Batch Normalization to prevent overfitting.

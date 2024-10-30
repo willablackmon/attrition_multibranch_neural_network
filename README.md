@@ -1,6 +1,4 @@
-## Project Workflow
-
-# Employee Attrition Analysis
+# **Employee Attrition Prediction with Multi-Branch, Deep Learning Model**
 
 This project aims to predict employee attrition using various machine learning models, including deep learning, based on features like department, salary, and personal attributes. The analysis emphasizes data preprocessing, predictive modeling, and identifying the key factors that drive employee turnover.
 

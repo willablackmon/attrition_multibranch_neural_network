@@ -18,11 +18,10 @@ This project predicts employee attrition using various machine learning techniqu
 
 ## Core Technologies, Tools
 
-* **Languages/Tools:** Python, Jupyter Notebook, Google Colab
+* **Languages/Tools:** Python, Jupyter Notebook, VS Code, Google Colab
 * **Libraries:** scikit-learn, pandas, NumPy, TensorFlow, Keras, Matplotlib, Seaborn, SciPy
-* **Algorithms:** Multi-Branch Neural Networks (Deep Learning), Random Forest Classifier,
-* **Technologies:** Machine Learning, Classification, Data Preprocessing, Feature Engineering, Data Visualization
-* **Methods/Techniques:** Hyperparameter Tuning, Cross-Validation, One-Hot Encoding, Ordinal Encoding, Data Scaling, Feature Importance, Evaluation Metrics (Accuracy)
+* **Feature Engineering, EDA:** Hyperparameter Tuning, Cross-Validation, One-Hot Encoding, Ordinal Encoding, Data Scaling, Feature Importance, Correlation Analysis, Evaluation Metrics
+* **Models, Algorithms:** Multi-Branch Neural Networks (Deep Learning), Random Forest Classifier
 
 ---
 

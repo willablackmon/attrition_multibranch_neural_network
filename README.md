@@ -1,4 +1,4 @@
-# **Employee Attrition Prediction with Multi-Branch, Neural Network**
+# **Predicting Employee Attrition with Multi-Branch, Neural Network**
 
 Developed a multi-branch, neural network (deep learning) model using TensorFlow's Keras library to predict employee attrition, based on a dataset of employee records. The analysis emphasizes data preprocessing, predictive modeling, and identifying the key factors that drive employee turnover.
 

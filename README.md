@@ -12,7 +12,7 @@ Developed a multi-branch, neural network (deep learning) model using TensorFlow'
 
 ## Abstract
 
-This project predicts employee attrition using various machine learning techniques, including deep learning neural networks. After preprocessing the data, including scaling and encoding, models are trained to identify key factors contributing to employee turnover and to predict whether an employee will leave the company.
+This project predicts employee attrition using various machine learning techniques, including deep learning neural networks. After preprocessing the data, including scaling and encoding, model is trained to identify key factors contributing to employee turnover and to predict whether an employee will leave the company.
 
 ---
 

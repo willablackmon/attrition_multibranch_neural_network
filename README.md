@@ -19,8 +19,8 @@ This project predicts employee attrition using various machine learning techniqu
 ## Core Technologies, Tools
 
 * **Languages/Tools:** Python, Jupyter Notebook, VS Code, Google Colab
-* **Libraries:** scikit-learn, pandas, NumPy, TensorFlow, Keras, Matplotlib, Seaborn, SciPy
-* **Feature Engineering, EDA:** Hyperparameter Tuning, Cross-Validation, One-Hot Encoding, Ordinal Encoding, Data Scaling, Feature Importance, Correlation Analysis, Evaluation Metrics
+* **Libraries:** scikit-learn, pandas, NumPy, SciPy, TensorFlow, Keras, Matplotlib, Seaborn
+* **Feature Engineering, EDA:** Cross-Validation, One-Hot Encoding, Ordinal Encoding, Data Scaling, Feature Importance, Correlation Analysis, Evaluation Metrics
 * **Models, Algorithms:** Multi-Branch Neural Networks (Deep Learning), Random Forest Classifier
 
 ---
@@ -33,7 +33,7 @@ This project predicts employee attrition using various machine learning techniqu
 
 <figure>
     <figcaption><em>fig 1</em></figcaption>
-    <img src="images/1730241814443.png" height="160"
+    <img src="images/1730241814443.png" height="260"
          alt="1730241814443.png">
 </figure>
 
@@ -50,19 +50,19 @@ This project predicts employee attrition using various machine learning techniqu
 
 <figure>
     <figcaption><em>fig 2a. y Target data, Pre-Encoding</em></figcaption>
-    <img src="images/1730241847995.png" height="160"
+    <img src="images/1730241847995.png" height="140"
          alt="1730241847995.png">
 </figure>
 
 <figure>
     <figcaption><em>fig 2b. X feature Data, Pre-Encoding</em></figcaption>
-    <img src="images/1730242045980.png"
+    <img src="images/1730242045980.png" height="200""
          alt="1730242045980.png">
 </figure>
 
 <figure>
     <figcaption><em>fig 2c.  X feature Data, After ordinal encoding</em></figcaption>
-    <img src="images/1730242057715.png"
+    <img src="images/1730242057715.png" height="140"
          alt="1730242057715.png">
 </figure>
 
@@ -75,23 +75,21 @@ Created visualizations and conducted a correlation analysis to explore relations
 
 <figure>
     <figcaption><em>fig 3a.</em></figcaption>
-    <img src="images/1730242136910.png" height="160"
+    <img src="images/1730242136910.png" height="140"
          alt="1730242136910.png">
 </figure>
 
 <figure>
     <figcaption><em>fig 3b.</em></figcaption>
-    <img src="images/1727309662993.png" height="380"
-         alt="1727309662993.png">
+    <img src="images/1727309662993.png" width="680" alt="1727309662993.png">
 </figure>
 
-```
+
 <figure>
     <figcaption><em>fig 4.</em></figcaption>
-    <img src="images/1727309820361.png" height="380"
-         alt="1727309820361.png">
+    <img src="images/1730573755139.png" height="600" alt="1730573755139.png">
 </figure>
-```
+
 
 ---
 
